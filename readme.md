@@ -12,7 +12,7 @@
 npm install imagezip -g 
 
 # 使用yarn安装
-yarn add imagezip -g
+yarn global add imagezip
 ```
 
 ## Usage
