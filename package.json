@@ -1,0 +1,30 @@
+{
+  "name": "imagezip",
+  "version": "1.0.0",
+  "description": "图像压缩工具",
+  "main": "index.js",
+  "bin": {
+    "imagezip": "./bin/imagezip.js"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "furic-zhao",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1",
+    "cross-spawn": "^7.0.1",
+    "fez-imagemin": "^1.0.2",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "ora": "^4.0.3",
+    "plur": "^3.1.1",
+    "pretty-bytes": "^5.3.0"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "execa": "^4.0.0"
+  }
+}
