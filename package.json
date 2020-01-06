@@ -1,6 +1,6 @@
 {
   "name": "imagezip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "图像压缩工具",
   "main": "index.js",
   "bin": {
