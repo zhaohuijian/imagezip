@@ -14,10 +14,11 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminGifsicle = require('imagemin-gifsicle');
 
 program
-  .version('1.0.0')
+  .version('1.1.0')
   .option('-Q --quality [0~100]', 'JPG压缩质量', '80')
-  .option('-I --input [folder]', '原始图片目录', './')
-  .option('-O --output [folder]', '压缩图片存放目录', './')
+  .option('-I --input [folder]', '原始图像目录', './')
+  .option('-O --output [folder]', '压缩图像存放目录', null)
+  .option('-S --subdir [bool]', '压缩包含子目录的图像', false)
   .parse(process.argv);
 
 module.exports = async function () {
@@ -25,12 +26,12 @@ module.exports = async function () {
   if (program.args.length > 0) {
     params = params.concat([...program.args]);
   } else {
-    params = params.concat([path.resolve(process.cwd(), program.input, `*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF}`)]);
+    params = params.concat([path.resolve(process.cwd(), program.input, `${program.subdir ? '**/' : ''}*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF}`)]);
   }
   // console.log(params)
   const spinner = ora('Minifying images...').start();
   const files = await imagemin(params, {
-    destination: path.resolve(process.cwd(), program.output),
+    destination: program.output ? path.resolve(process.cwd(), program.output) : null,
     plugins: [
       imageminMozjpeg({
         quality: program.quality
