@@ -25,9 +25,10 @@ Usage: index [options]
 
 Options:
   -V, --version         output the version number
-  -Q --quality [0~100]  JPG压缩质量 (default: "80")
-  -I --input [folder]   原始图片目录 (default: "./")
-  -O --output [folder]  压缩图片存放目录 (default: "./")
+  -Q --quality [0~100]  jpg/jpeg压缩质量 (default: "80")
+  -I --input [folder]   原始图像目录 (default: "./")
+  -O --output [folder]  压缩图像存放目录 (default: null)
+  -S --subdir [bool]    压缩包含子目录的图像 (default: false)
   -h, --help            output usage information
 ```
 
@@ -40,22 +41,28 @@ cd assets
 # 压缩当前目录所有图片
 imagezip
 
+# 压缩当前目录及子目录下的所有图片
+imagezip --subdir
+
 # 压缩当前目录单个图片
 imagezip demo.jpg
 
-# 压缩 /Users/furic/www/assets/ 目录中的 demo.jpg
+# 设置jpg/jpeg的压缩质量为 70 （范围0~100）
+imagezip demo.jpg --quality 70
+
+# 压缩指定目录中的图片
 imagezip /Users/furic/www/assets/demo.jpg
 
-# 压缩多个图片
+# 压缩多个图片以空格分开
 imagezip demo1.jpg demo2.png demo3.gif
 
-# 压缩当前目录所有图片并将压缩后的图片保存到 当前目录下的 minify 目录
-imagezip --output minify
+# 压缩 /Users/furic/www/assets 目录下的所有图片
+imagezip --input /Users/furic/www/assets
 
-# 压缩 /Users/furic/www/assets 目录下的所有图片 并保存到 /Users/furic/www/minify目录
-imagezip --input /Users/furic/www/assets --output /Users/furic/www/minify
+# 压缩当前目录所有图片并将压缩后的图片保存到 /Users/furic/minify 目录
+imagezip --output /Users/furic/minify
 ```
-> 若不设置`--output`参数，压缩后的图片将覆盖原图片。
+> 若不设置`--output`参数，压缩后的图像将覆盖原图像。
 
 ### 使用示例
 
@@ -72,5 +79,5 @@ imagezip --input /Users/furic/www/assets --output /Users/furic/www/minify
 ✔ hsy.png (saved 1.4 MB to 629 kB - 768 kB/55%)
 Minified 3 images (saved 2.45 MB to 1.38 MB - 1.07 MB/43.7%)
 ```
-结果说明：
+输出结果说明：
 > (saved 原图大小(kB) to 压缩后图片大小(kB) - 压缩大小(kB) / 压缩率%)
