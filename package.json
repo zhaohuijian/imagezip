@@ -1,6 +1,6 @@
 {
   "name": "imagezip",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "图像压缩工具",
   "main": "index.js",
   "bin": {
@@ -11,6 +11,24 @@
   },
   "author": "furic-zhao",
   "license": "MIT",
+  "repository": "chanjet-fe/imagezip",
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "图片压缩",
+    "图像压缩",
+    "性能优化",
+    "前端工程",
+    "minify",
+    "compress",
+    "image",
+    "images",
+    "jpeg",
+    "jpg",
+    "png",
+    "gif"
+  ],
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^4.0.1",
