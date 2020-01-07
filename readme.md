@@ -98,7 +98,7 @@ yarn add imagezip -D
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "imagezip": "imagezip --subdir --input /Users/furic/project-web/src/static/images"
+    "imagezip": "imagezip --subdir --input src/static/images"
   },
   "devDependencies": {
     "imagezip": "^1.1.0"
@@ -110,3 +110,9 @@ yarn add imagezip -D
 执行`npm run imagezip`或者`yarn imagezip`，压缩本项目`src/static/images`目录中的所有图片。
 
 > 也可以使用绝对路径：`imagezip --subdir --input /Users/furic/project-web/src/static/images`。命令行参数也可以使用简写：`imagezip -S -I src/static/images`。
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2020-present, [畅捷通前端团队](https://github.com/chanjet-fe).
