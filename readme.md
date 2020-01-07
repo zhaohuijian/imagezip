@@ -5,7 +5,7 @@
 **为什么要做图片压缩**
 > Google官方的最佳实践中关于图片优化有下面这样一段描述：对于网页来说，在所下载的字节数中，图片往往会占很大比例。因此，优化图片通常可以卓有成效地减少字节数和改进性能：浏览器需要下载的字节数越少，对客户端带宽的争用就越少，浏览器下载内容并在屏幕上呈现内容的速度就越快。
 
-## Install
+## 全局安装
 
 ```
 # 使用npm安装
@@ -15,7 +15,7 @@ npm install imagezip -g
 yarn global add imagezip
 ```
 
-## Usage
+## 全局使用
 
 ### 基本使用
 
@@ -35,9 +35,6 @@ Options:
 ### 基本功能
 
 ```bash
-# 进入图片存放目录
-cd assets
-
 # 压缩当前目录所有图片
 imagezip
 
@@ -68,7 +65,7 @@ imagezip --output /Users/furic/minify
 
 ```bash
 ➜  cd assets
-.
+assets
 ├── hsy.child.jpg
 ├── hsy.loading.gif
 └── hsy.png
@@ -81,3 +78,35 @@ Minified 3 images (saved 2.45 MB to 1.38 MB - 1.07 MB/43.7%)
 ```
 输出结果说明：
 > (saved 原图大小(kB) to 压缩后图片大小(kB) - 压缩大小(kB) / 压缩率%)
+
+## 项目中本地安装
+
+```bash
+# 使用npm安装
+npm install imagezip --save-dev
+
+#使用yarn安装
+yarn add imagezip -D
+```
+## 项目中本地使用
+
+在项目的`package.json`文件中配置`scripts`。
+
+```json
+{
+  "name": "saas-hsy-web",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    "imagezip": "imagezip --subdir --input /Users/furic/project-web/src/static/images"
+  },
+  "devDependencies": {
+    "imagezip": "^1.1.0"
+  }
+}
+
+```
+
+执行`npm run imagezip`或者`yarn imagezip`，压缩本项目`src/static/images`目录中的所有图片。
+
+> 也可以使用绝对路径：`imagezip --subdir --input /Users/furic/project-web/src/static/images`。命令行参数也可以使用简写：`imagezip -S -I src/static/images`。
