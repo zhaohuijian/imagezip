@@ -14,7 +14,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminGifsicle = require('imagemin-gifsicle');
 
 program
-  .version('1.1.0')
+  .version('1.1.1')
   .option('-Q --quality [0~100]', 'JPG压缩质量', '80')
   .option('-I --input [folder]', '原始图像目录', './')
   .option('-O --output [folder]', '压缩图像存放目录', null)
