@@ -1,6 +1,6 @@
 # imagezip
 
-前端性能图像（jpg、png、gif）压缩工具。
+前端性能图像（jpg、png、gif）压缩工具。对整个项目或目录、或单个图片、多个图片深度无损压缩，使用业界前沿的程序算法，压缩率达50%以上，并且几乎看不出质量差别，极致的图片性能优化，帮助我们开发拥有极致用户体验的产品。
 
 **为什么要做图片压缩**
 > Google官方的最佳实践中关于图片优化有下面这样一段描述：对于网页来说，在所下载的字节数中，图片往往会占很大比例。因此，优化图片通常可以卓有成效地减少字节数和改进性能：浏览器需要下载的字节数越少，对客户端带宽的争用就越少，浏览器下载内容并在屏幕上呈现内容的速度就越快。
@@ -16,8 +16,6 @@ yarn global add imagezip
 ```
 
 ## 全局使用
-
-### 基本使用
 
 ```bash
 ➜  imagezip --help
@@ -94,7 +92,7 @@ yarn add imagezip -D
 
 ```json
 {
-  "name": "saas-hsy-web",
+  "name": "project-demo",
   "version": "1.0.0",
   "main": "",
   "scripts": {
@@ -106,13 +104,28 @@ yarn add imagezip -D
 }
 
 ```
+执行:
+```bash
+yarn imagezip #或者 npm run imagezip
+```
+压缩本项目`src/static/images`目录中的所有图片。
 
-执行`npm run imagezip`或者`yarn imagezip`，压缩本项目`src/static/images`目录中的所有图片。
+```bash
+#可以使用绝对路径
+imagezip --subdir --input /Users/furic/project-web/src/static/images
 
-> 也可以使用绝对路径：`imagezip --subdir --input /Users/furic/project-web/src/static/images`。命令行参数也可以使用简写：`imagezip -S -I src/static/images`。
+#命令行参数也可以使用简写
+imagezip -S -I src/static/images
+```
+
+## Tips
+
+如果你的手机、电脑中有大量的数码照片，此工具可为你节省大量的存储空间。
+
+> 电脑中存储的某些照片是`已锁定`状态，请确保你要压缩的照片的读、写权限。
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2020-present, [畅捷通前端团队](https://github.com/chanjet-fe).
+Copyright (c) 2020-present, [chanjet-fe](https://github.com/chanjet-fe).
