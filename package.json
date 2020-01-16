@@ -1,7 +1,7 @@
 {
   "name": "imagezip",
-  "version": "1.1.2",
-  "description": "图像压缩工具",
+  "version": "1.2.0",
+  "description": "深度图像压缩工具",
   "main": "index.js",
   "bin": {
     "imagezip": "./bin/imagezip.js"
@@ -35,6 +35,7 @@
     "cross-spawn": "^7.0.1",
     "fez-imagemin": "^1.1.0",
     "imagemin-gifsicle": "^6.0.1",
+    "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "ora": "^4.0.3",
