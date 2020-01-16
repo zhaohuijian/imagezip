@@ -11,6 +11,7 @@ const ora = require('ora');
 const imagemin = require('fez-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminJpegtran = require('imagemin-jpegtran');
 const imageminGifsicle = require('imagemin-gifsicle');
 
 program
@@ -33,6 +34,7 @@ module.exports = async function () {
   const files = await imagemin(params, {
     destination: program.output ? path.resolve(process.cwd(), program.output) : null,
     plugins: [
+      imageminJpegtran(),
       imageminMozjpeg({
         quality: program.quality
       }),
