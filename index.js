@@ -8,6 +8,7 @@ const prettyBytes = require('pretty-bytes');
 const chalk = require('chalk');
 const plur = require('plur');
 const ora = require('ora');
+const boxen = require('boxen');
 const imagemin = require('fez-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminMozjpeg = require('imagemin-mozjpeg');
@@ -29,7 +30,14 @@ module.exports = async function () {
   } else {
     params = params.concat([path.resolve(process.cwd(), program.input, `${program.subdir ? '**/' : ''}*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF}`)]);
   }
-  // console.log(params)
+  let message = chalk.cyan('欢迎使用ImageZip图像深度压缩工具');
+  message += `\n\n${chalk.gray('More info see:https://github.com/chanjet-fe/imagezip')}`;
+  console.log(boxen(message, {
+    padding: 1,
+    borderColor: 'white',
+    margin: 0,
+    borderStyle: 'classic'
+  }));
   const spinner = ora('Minifying images...').start();
   const files = await imagemin(params, {
     destination: program.output ? path.resolve(process.cwd(), program.output) : null,
@@ -72,11 +80,11 @@ module.exports = async function () {
 
 
   const totalPercent = totalBytes > 0 ? (totalSavedBytes / totalBytes) * 100 : 0;
-  let msg = chalk.blue(`Minified ${totalFiles} ${plur('image', totalFiles)}`);
+  let totalMsg = chalk.blue(`Minified ${totalFiles} ${plur('image', totalFiles)}`);
 
   if (totalFiles > 0) {
-    msg += chalk.gray(` (saved ${prettyBytes(totalBytes)} to ${prettyBytes(totalOptimizedBytes)} - ${prettyBytes(totalSavedBytes)}/${totalPercent.toFixed(1).replace(/\.0$/, '')}%)`);
+    totalMsg += chalk.gray(` (saved ${prettyBytes(totalBytes)} to ${prettyBytes(totalOptimizedBytes)} - ${prettyBytes(totalSavedBytes)}/${totalPercent.toFixed(1).replace(/\.0$/, '')}%)`);
   }
 
-  console.log(msg);
+  console.log(totalMsg);
 }();
