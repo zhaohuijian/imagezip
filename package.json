@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": "chanjet-fe/imagezip",
   "engines": {
-    "node": ">=8"
+    "node": ">=8.10"
   },
   "keywords": [
     "图片压缩",

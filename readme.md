@@ -1,3 +1,5 @@
+<a href="https://www.npmjs.com/package/imagezip"><img src="https://img.shields.io/npm/v/imagezip.svg" alt="npm-version"></a> <img src="https://img.shields.io/npm/dm/imagezip.svg" alt="download-num"> <img src="https://img.shields.io/badge/node-%3E=8.16.0-brightgreen.svg" alt="node"> <img src="https://img.shields.io/npm/l/imagezip.svg" alt="license"> <img src="https://img.shields.io/badge/platform-MacOS%7CLinux%7CWindows-lightgrey.svg" alt="platform">
+
 # imagezip
 
 前端性能图像（jpg、png、gif）压缩工具。对整个项目或目录、或单个图片、多个图片深度无损压缩，使用业界前沿的程序算法，压缩率达50%以上，并且几乎看不出质量差别，极致的图片性能优化，帮助我们开发拥有极致用户体验的产品。
