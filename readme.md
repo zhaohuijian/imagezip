@@ -130,4 +130,4 @@ imagezip -S -I src/static/images
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2020-present, [chanjet-fe](https://github.com/chanjet-fe).
+Copyright (c) 2020-present, [HJ.Z](https://github.com/zhaohuijian).
