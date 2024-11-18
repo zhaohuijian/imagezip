@@ -33,7 +33,7 @@
     "boxen": "4.2.0",
     "chalk": "3.0.0",
     "commander": "4.0.1",
-    "cross-spawn": "7.0.1",
+    "cross-spawn": "7.0.5",
     "fez-imagemin": "1.1.0",
     "imagemin-gifsicle": "6.0.1",
     "imagemin-jpegtran": "7.0.0",
